@@ -79,7 +79,7 @@ export default function Home() {
         {/* About */}
         <div className="md:w-2/4 w-full h-full flex items-center">
           <div ref={textRef} className={` h-full w-full mb-5 flex flex-col text-gray-700 dark:text-white    justify-center`}>
-            <p className={`${bebas.className} hero-text md:text-7xl text-6xl text-black dark:text-white`} style={{ fontWeight: 400 }}> Hi, I'm Ajeesh.</p>
+            <p className={`${bebas.className} hero-text md:text-7xl text-6xl text-black dark:text-white`} style={{ fontWeight: 400 }}> Hi, I&apos;m Ajeesh.</p>
             <p className={`${poppins.className} p-section`} style={{ fontWeight: 500 }}>Web developer</p>
             <p className={`${poppins.className} p-section`}>Expertised in full stack development in MERN stack based in india.</p>
             {/* contact-button */}

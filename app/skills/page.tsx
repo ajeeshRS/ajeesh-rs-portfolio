@@ -1,12 +1,11 @@
 'use client'
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
-import { Bebas_Neue, Kode_Mono, Outfit } from 'next/font/google';
+import { Bebas_Neue, Kode_Mono } from 'next/font/google';
 import React from 'react';
 import SplitType from 'split-type';
 const bebas = Bebas_Neue({ weight: ["400"], subsets: ["latin"] })
 const kode = Kode_Mono({ weight: ["400"], subsets: ["latin"] })
-const outfit = Outfit({ weight: ["400"], subsets: ["latin"] })
 
 export default function Skills() {
     // Gsap animation hook
