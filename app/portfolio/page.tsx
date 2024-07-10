@@ -68,7 +68,7 @@ export default function Projects() {
     ]
 
     return (
-        <div className="dark:bg-[#0c0c0c] bg-[#FBFBFE] w-full h-[full] flex flex-col justify-around items-center duration-500 ease-in-out transition-all">
+        <div className="dark:bg-[#0c0c0c] bg-[#FBFBFE] w-full h-full flex flex-col justify-around items-center duration-500 ease-in-out transition-all">
             {/* Heading section */}
             <div className='head-text'>
                 <p className={`${bebas.className} head-text font-bold dark:text-white text-black text-6xl`}>Portfolio.</p>
