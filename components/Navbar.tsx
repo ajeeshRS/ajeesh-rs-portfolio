@@ -50,13 +50,13 @@ export default function Navbar() {
         <nav className={`nav-bar flex w-full h-[10vh] ${pathname === '/contact' ? 'bg-[#F10E0C]' : 'dark:bg-[#0c0c0c] bg-[#FBFBFE]'} duration-500 transition-all ease-in-out  opacity-0  justify-between items-center md:p-10 p-5`}>
             <div className="flex md:w-2/4 w-5/6 items-center">
                 <div className={`${source.className} flex md:w-3/6 w-full  justify-between text-black dark:text-gray-400`}>
-                    <p className={`${pathname === "/contact" ? 'text-gray-300 hover:text-black' : 'hover:dark:text-white hover:text-red-600'}  font-semibold  ${pathname === "/" && 'text-red-600 dark:text-white'} ease-in-out cursor-pointer duration-[.3s] text-sm`}><Link href={"/"}>Home</Link></p>
+                    <p className={`${pathname === "/contact" ? 'text-gray-300 hover:text-black' : 'hover:dark:text-white hover:text-red-600'}  font-semibold  ${pathname === "/" && 'text-red-600 dark:text-white'} ease-in-out cursor-pointer duration-[.3s] md:text-sm text-xs`}><Link href={"/"}>Home</Link></p>
 
-                    <p className={`${pathname === "/contact" ? 'text-gray-300 hover:text-black' : 'hover:dark:text-white hover:text-red-600'}  font-semibold  ${pathname === "/skills" && 'text-red-600 dark:text-white'} ease-in-out cursor-pointer duration-[.3s] text-sm`}><Link href={"/skills"}>Skills</Link></p>
+                    <p className={`${pathname === "/contact" ? 'text-gray-300 hover:text-black' : 'hover:dark:text-white hover:text-red-600'}  font-semibold  ${pathname === "/skills" && 'text-red-600 dark:text-white'} ease-in-out cursor-pointer duration-[.3s] md:text-sm text-xs`}><Link href={"/skills"}>Skills</Link></p>
 
-                    <p className={`${pathname === "/contact" ? 'text-gray-300 hover:text-black' : 'hover:dark:text-white hover:text-red-600'}  font-semibold  ${pathname === "/portfolio" && 'text-red-600 dark:text-white'} ease-in-out cursor-pointer duration-[.3s] text-sm`}><Link href={"/portfolio"}>Portfolio</Link></p>
+                    <p className={`${pathname === "/contact" ? 'text-gray-300 hover:text-black' : 'hover:dark:text-white hover:text-red-600'}  font-semibold  ${pathname === "/portfolio" && 'text-red-600 dark:text-white'} ease-in-out cursor-pointer duration-[.3s] md:text-sm text-xs`}><Link href={"/portfolio"}>Portfolio</Link></p>
 
-                    <p className={` font-semibold  ${pathname === "/contact" ? 'text-black  hover:text-black' : 'hover:dark:text-white hover:text-red-600'} ease-in-out cursor-pointer duration-[.3s] text-sm`}><Link href={"/contact"}>Contact</Link></p>
+                    <p className={` font-semibold  ${pathname === "/contact" ? 'text-black  hover:text-black' : 'hover:dark:text-white hover:text-red-600'} ease-in-out cursor-pointer duration-[.3s] md:text-sm text-xs`}><Link href={"/contact"}>Contact</Link></p>
                 </div>
             </div>
             <button onClick={toggleMode} className={`${pathname === "/contact" && 'hidden'}`} ><Image className={`mode-icon border dark:bg-white rounded-lg w-[25px] h-[25px] p-1`} src={darkMode ? lightMode : nightMode} alt={darkMode ? 'light-mode' : 'night-mode'} /></button>

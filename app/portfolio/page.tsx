@@ -109,11 +109,11 @@ export default function Projects() {
         </p>
       </div>
 
-      <div className="w-full grid md:grid-cols-3 items-center px-10 py-10">
+      <div className="w-full grid md:grid-cols-3 grid-cols-1 items-center md:px-10 px-4 py-10">
         {projects.map((project, i) => (
           <div
             key={i}
-            className="relative flex flex-col mt-6 text-gray-700 dark:bg-[#1b1b1b] bg-white shadow-md bg-clip-border rounded-xl w-96 h-fit"
+            className="relative flex flex-col mt-6 text-gray-700 dark:bg-[#1b1b1b] bg-white shadow-md bg-clip-border rounded-xl md:w-96 w-fit h-fit"
           >
             <div className="relative h-56 mx-4 mt-6 overflow-hidden text-white shadow-lg bg-clip-border rounded-xl bg-blue-gray-500 shadow-blue-gray-500/40">
               <Image
