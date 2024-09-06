@@ -51,7 +51,7 @@ export default function Contact() {
     }, [])
 
     return (
-        <div className="dark:bg-[#F10E0C] bg-[#F10E0C] w-full md:h-[87vh] h-[90vh] flex justify-around flex-col items-center duration-500 ease-in-out transition-all">
+        <div className="dark:bg-[#F10E0C] bg-[#F10E0C] w-full  h-[90vh] flex justify-around flex-col items-center duration-500 ease-in-out transition-all">
             {/* Heading section */}
             <div className='head-text'>
                 <p className={`${bebas.className} font-bold text-6xl`}>Get in Touch.</p>

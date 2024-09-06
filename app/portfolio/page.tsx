@@ -1,104 +1,149 @@
-'use client'
-import React from 'react';
-import { Bebas_Neue, Poppins } from "next/font/google"
-import Image from 'next/image';
-import voxverseImg from "../../public/images/VoxVerse.png"
-import devcartImg from "../../public/images/Dev-Cart .png"
-import tripgramImg from "../../public/images/Tripgram.png"
-import Link from 'next/link';
-import { useGSAP } from '@gsap/react';
-import SplitType from 'split-type';
-import gsap from 'gsap';
+"use client";
+import React from "react";
+import { Bebas_Neue, Poppins } from "next/font/google";
+import Image from "next/image";
+import voxverseImg from "../../public/images/VoxVerse.png";
+import devcartImg from "../../public/images/Dev-Cart .png";
+import tripgramImg from "../../public/images/Tripgram.png";
+import cryptoVaultImg from "../../public/images/crypto-vault.png";
+import vectorshiftImg from "../../public/images/vectorshift-replica.png";
+import credalImg from "../../public/images/credal-revamp.png";
+import Link from "next/link";
+import { useGSAP } from "@gsap/react";
+import SplitType from "split-type";
+import gsap from "gsap";
+import { Code } from "lucide-react";
 
-const bebas = Bebas_Neue({ weight: ["400"], subsets: ["latin"] })
-const poppins = Poppins({ weight: ["400"], subsets: ["latin"] })
+const bebas = Bebas_Neue({ weight: ["400"], subsets: ["latin"] });
+const poppins = Poppins({ weight: ["400"], subsets: ["latin"] });
 export default function Projects() {
+  // Gsap animation hook
+  useGSAP(() => {
+    const splitText = new SplitType(".head-text", { types: "chars" });
+    const headChars = splitText.chars;
+    gsap.fromTo(
+      headChars,
+      {
+        opacity: 0,
+        y: 50,
+      },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.7,
+        stagger: 0.03,
+        scrub: true,
+        ease: "power1.in",
+      }
+    );
 
-    // Gsap animation hook
-    useGSAP(() => {
-        const splitText = new SplitType('.head-text', { types: 'chars' })
-        const headChars = splitText.chars
-        gsap.fromTo(headChars, {
-            opacity: 0,
-            y: 50,
-        }, {
-            opacity: 1,
-            y: 0,
-            duration: 1,
-            stagger: 0.03,
-            scrub: true,
-            ease: "power1.in"
+    gsap.from(".card", {
+      opacity: 0,
+      y: 20,
+      stagger: 0.1,
+      duration: 0.5,
+      ease: "power2.out",
+    });
+  }, []);
 
-        })
+  // project details
+  const projects = [
+    {
+      projectImg: cryptoVaultImg,
+      title: "Crypto Vault",
+      description:
+        "A simple web based wallet made using Nextjs, Tailwindcss, Ethersjs.",
+      link: "https://web-based-wallet-ten.vercel.app",
+      githubRepo: "https://github.com/ajeeshRS/web-based-wallet",
+    },
+    {
+      projectImg: voxverseImg,
+      title: "Voxverse",
+      description:
+        "Voxverse, a dynamic blogging platform built with the PERN stack, Tailwindcss.",
+      link: "https://voxverse.netlify.app",
+      githubRepo: "https://github.com/ajeeshRS/voxverse",
+    },
+    {
+      projectImg: devcartImg,
+      title: "Devcart",
+      description:
+        "DevCart, an ecommerce platform made using MERN stack, Material UI.",
+      link: "https://dev-cart-000.netlify.app/user/home",
+      githubRepo: "https://github.com/ajeeshRS/devcart-frontend",
+    },
+    {
+      projectImg: credalImg,
+      title: "Credal Revamp",
+      description:
+        "Revamp version of credal.ai,a YC backed startup made using nextjs, tailwindcss.",
+      link: "https://credal-revamp.vercel.app",
+      githubRepo: "https://github.com/ajeeshRS/credal-revamp",
+    },
+    {
+      projectImg: vectorshiftImg,
+      title: "VectorShift Replica",
+      description:
+        "A replica of vectorshift.ai home page, a YC backed startup.Made using nextjs, tailwind css.",
+      link: "https://vs-clone-phi.vercel.app",
+      githubRepo: "https://github.com/ajeeshRS/vs-clone",
+    },
+    {
+      projectImg: tripgramImg,
+      title: "Tripgram",
+      description:
+        "TripGram, a simple landing page made using Next.js and Tailwind CSS.",
+      link: "https://tripgram-adzl.vercel.app",
+      githubRepo: "https://github.com/ajeeshRS/tripgram",
+    },
+  ];
 
-        gsap.from('.card', {
-            opacity: 0,
-            y: 20,
-            stagger: 0.1,
-            duration: 0.5,
-            ease: "power2.out",
-        }
-        )
+  return (
+    <div className="dark:bg-[#0c0c0c] bg-[#FBFBFE] w-full h-full flex flex-col justify-around items-center duration-500 ease-in-out transition-all">
+      {/* Heading section */}
+      <div className="head-text">
+        <p
+          className={`${bebas.className} head-text font-bold dark:text-white text-black text-6xl`}
+        >
+          Portfolio.
+        </p>
+      </div>
 
-    }, [])
-
-    // project details
-    const projects = [
-        {
-            projectImg: voxverseImg,
-            title: 'Voxverse',
-            description: 'Introducing my latest project: a dynamic blogging platform built with the PERN stack. Secure logins, personalized profiles, and seamless content discovery. Plus, user feedback for continuous improvement. Explore a new dimension in blogging!',
-            link: 'https://voxverse.netlify.app',
-            githubRepo: 'https://github.com/ajeeshRS/voxverse'
-        },
-        {
-            projectImg: devcartImg,
-            title: 'Devcart',
-            description: 'DevCart: where developers shop smarter. Browse, wishlist, and securely checkout premium peripherals. Admins, manage sales, products, and discounts effortlessly. Elevate your shopping experience with DevCart.',
-            link: 'https://dev-cart-000.netlify.app/user/home',
-            githubRepo: 'https://github.com/ajeeshRS/devcart-frontend'
-        },
-        {
-            projectImg: tripgramImg,
-            title: 'Tripgram',
-            description: 'TripGram: Where simplicity meets style in Next.js and Tailwind CSS. Dive into a world of clean design and effortless responsiveness. Let your creativity soar with TripGram – the perfect canvas for your next project.',
-            link: 'https://tripgram-adzl.vercel.app',
-            githubRepo: 'https://github.com/ajeeshRS/tripgram'
-        },
-    ]
-
-    return (
-        <div className="dark:bg-[#0c0c0c] bg-[#FBFBFE] w-full h-full flex flex-col justify-around items-center duration-500 ease-in-out transition-all">
-            {/* Heading section */}
-            <div className='head-text'>
-                <p className={`${bebas.className} head-text font-bold dark:text-white text-black text-6xl`}>Portfolio.</p>
+      <div className="w-full grid md:grid-cols-3 items-center px-10 py-10">
+        {projects.map((project, i) => (
+          <div
+            key={i}
+            className="relative flex flex-col mt-6 text-gray-700 dark:bg-[#1b1b1b] bg-white shadow-md bg-clip-border rounded-xl w-96 h-fit"
+          >
+            <div className="relative h-56 mx-4 mt-6 overflow-hidden text-white shadow-lg bg-clip-border rounded-xl bg-blue-gray-500 shadow-blue-gray-500/40">
+              <Image
+                src={project.projectImg}
+                alt="project-img"
+                className="object-cover w-full h-full"
+              />
             </div>
-
-            {/* card section */}
-            <div className='w-full md:px-20 px-5 flex flex-col items-center py-10'>
-                {projects.map((project, index) => (
-                    <div key={index} className='card md:w-3/6 w-6/6 h-[260px] bg-white dark:bg-black rounded-lg shadow-md flex my-4'>
-                        <div className='p-2 w-4/6'>
-                            <Image className='w-full h-full  rounded-lg  object-cover' src={project.projectImg} alt='project-img' />
-                        </div>
-                        <div className={`${poppins.className}text-black dark:text-white md:p-2 p-1 w-4/6 flex flex-col justify-center`}>
-                            <p className='font-bold text-xl'>{project.title}</p>
-                            <p className='text-[9px] md:text-xs py-1 text-slate-600 text-justify'>{project.description}</p>
-                            <div className={`w-full flex justify-start py-3`}>
-                                <button className='px-3 py-2  text-white rounded-lg bg-red-600 font-semibold hover:bg-red-700 duration-300 ease-in-out transition'><Link href={project.link}>
-                                    DEMO </Link> </button>
-                                <button className='px-1 py-1 mx-2 text-white rounded-lg bg-red-600 font-semibold hover:bg-red-700 duration-300 ease-in-out transition'><Link href={project.githubRepo}>{'</>'}</Link></button>
-                            </div>
-                        </div>
-                    </div>
-
-                ))
-
-
-                }
-
-
+            <div className="p-6 h-36 text-[#010101] dark:text-white">
+              <h5 className="block mb-2 font-sans text-xl antialiased font-semibold leading-snug tracking-normal text-blue-gray-900">
+                {project.title}{" "}
+              </h5>
+              <p className="block font-sans text-base antialiased font-light leading-relaxed text-inherit">
+                {project.description}
+              </p>
             </div>
-        </div >
-    )
+            <div className="flex items-center justify-start pb-5">
+              <button className="bg-red-600 text-white py-1 px-3 rounded-xl hover:bg-red-500 transition duration-200 ease-in-out mx-4">
+                <Link href={project.link}>Demo</Link>{" "}
+              </button>
+              <button className="bg-red-600 text-white py-1 px-3 rounded-xl hover:bg-red-500 transition duration-200 ease-in-out mx-4">
+                <Link href={project.githubRepo}>
+                  {" "}
+                  <Code className="w-6 h-6" />
+                </Link>
+              </button>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
 }

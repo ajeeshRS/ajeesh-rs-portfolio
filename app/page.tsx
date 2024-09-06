@@ -70,7 +70,7 @@ export default function Home() {
   }, [])
 
   return (
-    <div className="dark:bg-[#0c0c0c] bg-[#FBFBFE] w-full md:h-[87vh] h-full flex flex-col items-start duration-500 ease-in-out transition-all">
+    <div className="dark:bg-[#0c0c0c] bg-[#FBFBFE] w-full  h-[90vh] flex flex-col items-start duration-500 ease-in-out transition-all">
       <div className="text-white flex md:flex-row flex-col w-full h-[90vh] p-10">
         {/* Image section */}
         <div className="md:w-2/4 w-full flex justify-center items-center">
