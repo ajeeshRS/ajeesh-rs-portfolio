@@ -36,7 +36,7 @@ export default function Skills() {
     const skills = ['JavaScript', 'Typescript', 'Html', 'Css', 'TailwindCSS', 'Material UI', 'React js', 'Next js', 'Node js', 'Express js', 'MongoDB', 'PostgreSQL', 'Firebase', 'Redux Toolkit', 'Git', 'Github', 'Docker', 'Websockets', 'Socket io', 'Jwt', 'Oauth', 'REST apis', 'Microservices', 'Mvc']
 
     return (
-        <div className="dark:bg-[#0c0c0c] bg-[#FBFBFE] w-full h-[90vh] flex flex-col  items-center duration-500 ease-in-out transition-all">
+        <div className="dark:bg-[#0c0c0c] bg-[#FBFBFE] w-full md:h-[90vh] h-fit flex flex-col  items-center duration-500 ease-in-out transition-all">
             {/* Heading section */}
             <div className='head-text'>
                 <p className={`${bebas.className} head-text pt-4 font-bold dark:text-white text-black text-6xl`}>Skills.</p>
