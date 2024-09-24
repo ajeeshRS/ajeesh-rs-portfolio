@@ -1,94 +1,71 @@
-'use client'
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useRef } from "react";
-import { useGSAP } from '@gsap/react';
-import { Bebas_Neue, Nunito, Poppins } from "next/font/google"
-import SplitType from 'split-type'
+"use client";
 import Image from "next/image";
-import profileImg from "../public/images/ajeesh.jpg"
-import ScrollToPlugin from "gsap/ScrollToPlugin";
-import sendButton from "../public/icons/Send (1).png"
 import Link from "next/link";
-
-gsap.registerPlugin(ScrollTrigger, ScrollToPlugin)
-
-// fonts
-const poppins = Poppins({ weight: ['400', '500'], subsets: ["latin"] })
-const bebas = Bebas_Neue({ weight: ['400'], subsets: ['latin'] })
-const nunito = Nunito({ weight: ['400', '500', '600', '700'], subsets: ['latin'] })
+import { FaXTwitter, FaGithub } from "react-icons/fa6";
+import { nunito } from "@/utils/fonts/app.font";
+import { projects, skills, socials } from "@/utils/app.constants";
+import Card from "@/components/Card";
 
 export default function Home() {
-  // refs
-  const imageRef = useRef(null);
-  const textRef = useRef<HTMLDivElement>(null);
-  const btnRef = useRef<HTMLButtonElement>(null)
-
-  // animate image
-  const animateImage = () => {
-    gsap.fromTo(
-      imageRef.current,
-      { opacity: 0, x: -100 },
-      { opacity: 1, x: 0, duration: 1, ease: 'back.in' }
-    );
-  };
-
-  // gsap animation hook
-  useGSAP(() => {
-
-    const text = new SplitType('.hero-text', { types: 'chars' })
-    const myChars = text.chars
-
-    gsap.fromTo(myChars, {
-      y: 130,
-      opacity: 0
-    }, {
-      y: 0,
-      stagger: 0.03,
-      ease: "power4.out",
-      duration: 0.7,
-      opacity: 1
-    })
-
-    if (textRef.current) {
-      gsap.fromTo('.p-section', {
-        opacity: 0,
-        y: 40,
-      }, {
-        opacity: 1,
-        y: 0,
-        stagger: 0.3,
-        duration: 1,
-        ease: "power4.out",
-        scrub: true
-      });
-
-    }
-    gsap.fromTo('.contact-btn', { opacity: 0, y: -130 }, { opacity: 1, y: 0, ease: "power4.out", duration: 1, scrub: true })
-
-    animateImage()
-  }, [])
-
   return (
-    <div className="dark:bg-[#0c0c0c] bg-[#FBFBFE] w-full  h-[90vh] flex flex-col items-start duration-500 ease-in-out transition-all">
-      <div className="text-white flex md:flex-row flex-col w-full h-[90vh] p-10">
-        {/* Image section */}
-        <div className="md:w-2/4 w-full flex justify-center items-center">
-          <Image ref={imageRef} className="rounded-full md:h-[300px] md:w-[300px] h-[250px] w-[250px] object-cover" src={profileImg} alt="profile-img" />
-        </div>
-        {/* About */}
-        <div className="md:w-2/4 w-full h-full flex items-center">
-          <div ref={textRef} className={` h-full w-full mb-5 flex flex-col text-gray-700 dark:text-white    justify-center`}>
-            <p className={`${bebas.className} hero-text md:text-7xl text-6xl text-black dark:text-white`} style={{ fontWeight: 400 }}> Hi, I&apos;m Ajeesh.</p>
-            <p className={`${poppins.className} p-section`} style={{ fontWeight: 500 }}>Web developer</p>
-            <p className={`${poppins.className} p-section`}>Expertised in full stack development in MERN stack based in india.</p>
-            {/* contact-button */}
-            <Link href={"/contact"}>
-              <button ref={btnRef} className={`bg-red-700 ${nunito.className} contact-btn flex items-center justify-center rounded-xl text-xl p-2 md:w-1/4 w-3/5 text-white font-bold mt-3  duration-[.3s] hover:scale-105 hover:bg-red-600 ease-in-out transition-all`}>Contact me<Image width={20} height={20} className="contact-icon ml-2" src={sendButton} alt="send-btn" /></button>
-            </Link>
-          </div>
+    <div
+      className={`${nunito.className} w-full h-full py-20 lg:px-72 md:px-60 px-10`}
+    >
+      <div className="w-full text-center">
+        <p className="text-[#2C3136] font-semibold text-2xl">
+          I&apos;m Ajeesh.
+        </p>
+        <p className="text-[#424A54] text-sm py-3 leading-5 text-justify md:px-5">
+          I&apos;m a Full Stack Developer from Kerala, India, who loves building
+          web apps. I&apos;m constantly learning to improve my design skills and
+          make my UIs more beautiful and user-friendly. Every project helps me
+          experiment, grow, and create better experiences!
+        </p>
+      </div>
+      <div className="py-10 w-full flex flex-col items-center">
+        <p className="text-sm font-medium text-[#9BA3AF]">Developed</p>
+        <div className="w-full grid lg:grid-cols-3 sm:grid-cols-2  gap-5 py-4">
+          {projects.map((project, i) => (
+            <Card project={project} key={i} />
+          ))}
         </div>
       </div>
-    </div >
+      <div className="py-5 w-full flex flex-col items-center">
+        <p className="text-sm font-medium text-[#9BA3AF]">Skills</p>
+        <div className="w-full flex flex-wrap justify-center gap-5 py-8 items-end">
+          {skills.map((skill, i) => (
+            <Image
+              className="w-10 h-10 rounded-xl"
+              key={i}
+              src={skill.icon}
+              alt={`${skill.title}-icon`}
+            />
+          ))}
+          <p className="text-xs font-medium text-[#424A54]">+ more</p>
+        </div>
+      </div>
+      <div className="py-5 w-full flex flex-col items-center">
+        <p className="text-sm font-medium text-[#9BA3AF]">Elsewhere</p>
+        <div className="w-full flex items-center justify-center py-10">
+          {socials.map((social, i) => (
+            <Link key={i} href={social.link}>
+              <div
+                key={i}
+                className="flex items-center p-1 border bg-[#F3F4F6] rounded-md mx-3 cursor-pointer hover:bg-slate-200"
+              >
+                {social.icon === "github" ? (
+                  <FaGithub className="w-4 h-4 text-[#374151]" />
+                ) : (
+                  social.icon === "x" && (
+                    <FaXTwitter className="w-4 h-4 text-[#374151]" />
+                  )
+                )}
+                <p className="text-xs text-[#374151] px-2">{social.username}</p>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </div>
+    </div>
   );
 }
