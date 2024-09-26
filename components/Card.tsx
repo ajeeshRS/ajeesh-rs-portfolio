@@ -10,7 +10,7 @@ interface cardProps {
 export default function Card({ project }: cardProps) {
   return (
     <div
-      className={`${nunito.className} relative flex flex-col mt-6  text-gray-700 dark:bg-[#1b1b1b] bg-white shadow-md bg-clip-border rounded-xl lg:w-6/6 md:w-6/6 sm:w-6/6 w-6/6 justify-center  h-[230px]`}
+      className={`${nunito.className} relative flex flex-col mt-6  text-gray-700 dark:bg-[#0E1D26] bg-[#EDEDE8] shadow-md bg-clip-border rounded-xl lg:w-6/6 md:w-6/6 sm:w-6/6 w-6/6 justify-center  h-[230px]`}
     >
       <div className="relative h-fit mx-3 mt-3 overflow-hidden text-white shadow-lg bg-clip-border rounded-xl bg-blue-gray-500 shadow-blue-gray-500/40">
         <Image
@@ -21,7 +21,7 @@ export default function Card({ project }: cardProps) {
       </div>
       <div className="px-3 py-4 h-fit text-[#2C3136] dark:text-white">
         <div className="w-full flex items-center justify-between py-2">
-          <p className="text-sm antialiased font-semibold tracking-normal text-blue-gray-900">
+          <p className="text-sm antialiased font-semibold tracking-normal text-[#061014]">
             {project.title}{" "}
           </p>
           <div className="flex items-center">
