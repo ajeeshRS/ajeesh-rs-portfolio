@@ -17,7 +17,7 @@ export default function Home() {
           I&apos;m Ajeesh.
         </p>
         <p className="text-[#424A54] text-sm py-3 leading-5 text-justify ">
-          I&apos;m a Full Stack Developer from Kerala, India, who loves building
+          I&apos;m a Full Stack Developer based out of Kerala, India, who loves building
           web apps. I&apos;m constantly learning to improve my design skills and
           make my UIs more beautiful and user-friendly. Every project helps me
           experiment, grow, and create better experiences!
