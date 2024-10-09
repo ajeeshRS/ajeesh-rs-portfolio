@@ -125,4 +125,9 @@ export const socials = [
     icon: "mail",
     link: "mailto:me.ajeesh7979@gmail.com",
   },
+  {
+    username: "ajeeshRS",
+    icon: "medium",
+    link: "https://medium.com/@ajeeshRS",
+  },
 ];

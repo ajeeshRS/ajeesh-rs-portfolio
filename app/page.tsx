@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { FaXTwitter, FaGithub } from "react-icons/fa6";
+import { FaXTwitter, FaGithub, FaMedium } from "react-icons/fa6";
 import { nunito } from "@/utils/fonts/app.font";
 import { projects, skills, socials } from "@/utils/app.constants";
 import Card from "@/components/Card";
@@ -10,17 +10,19 @@ import { IoMail } from "react-icons/io5";
 export default function Home() {
   return (
     <div
-      className={`${nunito.className} w-full h-full py-20 lg:px-72 md:px-60 px-10 bg-[#D6D6CC]`}
+      className={`${nunito.className} w-full h-full py-20 lg:px-72 md:px-60 px-10 bg-white`}
     >
       <div className="w-full text-start ">
         <p className="text-[#2C3136] font-semibold text-2xl">
           I&apos;m Ajeesh.
         </p>
         <p className="text-[#424A54] text-sm py-3 leading-5 text-justify ">
-          I&apos;m a Full Stack Developer based out of Kerala, India, who loves building
-          web apps. I&apos;m constantly learning to improve my design skills and
-          make my UIs more beautiful and user-friendly. Every project helps me
-          experiment, grow, and create better experiences!
+          I&apos;m a Full Stack Developer based out of Kerala, India, who loves
+          building web apps. I&apos;m constantly learning to improve my skills,
+          build things that i am fascinated. Every project helps me experiment,
+          grow, and create better experiences.
+          <br />
+          Let&apos;s build something cool together!!
         </p>
       </div>
       <div className="py-10 w-full flex flex-col items-center">
@@ -52,15 +54,17 @@ export default function Home() {
             <Link key={i} href={social.link}>
               <div
                 key={i}
-                className="flex items-center p-1 border  bg-[#EDEDE7] rounded-md mx-3 cursor-pointer hover:bg-[#e3e3dc]"
+                className="flex items-center p-1 border  bg-gray-50 rounded-md mx-3 cursor-pointer hover:bg-gray-100"
               >
                 {social.icon === "github" ? (
                   <FaGithub className="w-4 h-4 text-[#374151]" />
                 ) : social.icon === "x" ? (
                   <FaXTwitter className="w-4 h-4 text-[#374151]" />
+                ) : social.icon === "mail" ? (
+                  <IoMail className="w-4 h-4 text-[#374151]" />
                 ) : (
-                  social.icon === "mail" && (
-                    <IoMail className="w-4 h-4 text-[#374151]" />
+                  social.icon === "medium" && (
+                    <FaMedium className="w-4 h-4 text-[#374151]" />
                   )
                 )}
                 <p className="text-xs text-[#374151] px-2">{social.username}</p>

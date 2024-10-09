@@ -8,7 +8,7 @@ import { MoveLeft } from "lucide-react";
 export default function Navbar() {
   return (
     <nav
-      className={`${nunito.className} w-full lg:px-72 md:px-60 px-10 h-24 flex items-center justify-between bg-[#D6D6CC]`}
+      className={`${nunito.className} w-full lg:px-72 md:px-60 px-10 h-24 flex items-center justify-between bg-white`}
     >
       <div className="p-2 md:ml-10">
         <Image className="w-8 h-8" src={Logo} alt="logo" />

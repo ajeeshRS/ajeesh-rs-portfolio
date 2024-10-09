@@ -10,7 +10,7 @@ interface cardProps {
 export default function Card({ project }: cardProps) {
   return (
     <div
-      className={`${nunito.className} relative flex flex-col mt-6  text-gray-700 dark:bg-[#0E1D26] bg-[#EDEDE8] shadow-md bg-clip-border rounded-xl lg:w-6/6 md:w-6/6 sm:w-6/6 w-6/6 justify-center  h-[230px]`}
+      className={`${nunito.className} relative flex flex-col mt-6  text-gray-700 dark:bg-[#0E1D26] bg-gray-50 shadow-md bg-clip-border rounded-xl lg:w-6/6 md:w-6/6 sm:w-6/6 w-6/6 justify-center  h-[230px]`}
     >
       <div className="relative h-fit mx-3 mt-3 overflow-hidden text-white shadow-lg bg-clip-border rounded-xl bg-blue-gray-500 shadow-blue-gray-500/40">
         <Image
