@@ -49,12 +49,12 @@ export default function Home() {
       </div>
       <div id="elsewhere" className="py-5 w-full flex flex-col items-center">
         <p className="text-sm font-medium text-[#061014]">Elsewhere</p>
-        <div className="w-full flex items-center justify-center py-10">
+        <div className="w-full flex flex-wrap gap-5 items-center justify-center py-10">
           {socials.map((social, i) => (
             <Link key={i} href={social.link}>
               <div
                 key={i}
-                className="flex items-center p-1 border  bg-gray-50 rounded-md mx-3 cursor-pointer hover:bg-gray-100"
+                className="flex items-center justify-center p-1 border  bg-gray-50 rounded-md mx-3 cursor-pointer hover:bg-gray-100"
               >
                 {social.icon === "github" ? (
                   <FaGithub className="w-4 h-4 text-[#374151]" />
