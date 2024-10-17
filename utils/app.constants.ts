@@ -30,7 +30,7 @@ export const projects = [
     projectImg: cryptoVaultImg,
     title: "Crypto Vault",
     description:
-      "A simple web based wallet made using Nextjs, Tailwindcss, Ethersjs.",
+      "A web based wallet made using Nextjs, Tailwindcss, Ethersjs.",
     link: "https://web-based-wallet-ten.vercel.app",
     githubRepo: "https://github.com/ajeeshRS/web-based-wallet",
   },
@@ -38,7 +38,7 @@ export const projects = [
     projectImg:launchpadXImg ,
     title: "LaunchPadX",
     description:
-      "LaunchpadX, a simple way to launch your own SPL-TOKEN with ease.",
+      "LaunchpadX, easiest way to launch your own SPL-TOKEN.",
     link: "https://launchpad-x-seven.vercel.app/",
     githubRepo: "https://github.com/ajeeshRS/launchpadX",
   },
@@ -78,7 +78,7 @@ export const projects = [
     projectImg: tripgramImg,
     title: "Tripgram",
     description:
-      "TripGram, a simple landing page made using Next.js and Tailwind CSS.",
+      "TripGram, landing page made using Next.js and Tailwind CSS.",
     link: "https://tripgram-adzl.vercel.app",
     githubRepo: "https://github.com/ajeeshRS/tripgram",
   },
