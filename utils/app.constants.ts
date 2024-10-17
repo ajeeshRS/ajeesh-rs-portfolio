@@ -4,6 +4,8 @@ import tripgramImg from "../public/images/Tripgram.png";
 import cryptoVaultImg from "../public/images/crypto-vault.png";
 import vectorshiftImg from "../public/images/vectorshift-replica.png";
 import credalImg from "../public/images/credal-revamp.png";
+import launchpadXImg from "../public/images/launchpad.png"
+import cronifyImg from "../public/images/cronify.png"
 
 import tsIcon from "../public/v2icons/TypeScript.svg";
 import jsIcon from "../public/v2icons/Javascript.svg";
@@ -17,12 +19,28 @@ import nodejsIcon from "../public/v2icons/Nodejs.svg";
 import reactIcon from "../public/v2icons/React.svg";
 export const projects = [
   {
+    projectImg: cronifyImg,
+    title: "Cronify",
+    description:
+      "Cronify, a simple solution to keep your free-tier backend alive.",
+    link: "SOON",
+    githubRepo: "SOON",
+  },
+  {
     projectImg: cryptoVaultImg,
     title: "Crypto Vault",
     description:
       "A simple web based wallet made using Nextjs, Tailwindcss, Ethersjs.",
     link: "https://web-based-wallet-ten.vercel.app",
     githubRepo: "https://github.com/ajeeshRS/web-based-wallet",
+  },
+  {
+    projectImg:launchpadXImg ,
+    title: "LaunchPadX",
+    description:
+      "LaunchpadX, a simple way to launch your own SPL-TOKEN with ease.",
+    link: "https://launchpad-x-seven.vercel.app/",
+    githubRepo: "https://github.com/ajeeshRS/launchpadX",
   },
   {
     projectImg: voxverseImg,

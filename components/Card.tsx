@@ -8,6 +8,8 @@ interface cardProps {
   project: cardType;
 }
 export default function Card({ project }: cardProps) {
+  const soonCheck = [project.githubRepo, project.link];
+
   return (
     <div
       className={`${nunito.className} relative flex flex-col mt-6  text-gray-700 dark:bg-[#0E1D26] bg-gray-50 shadow-md bg-clip-border rounded-xl lg:w-6/6 md:w-6/6 sm:w-6/6 w-6/6 justify-center  h-[230px]`}
@@ -24,14 +26,20 @@ export default function Card({ project }: cardProps) {
           <p className="text-sm antialiased font-semibold tracking-normal text-[#061014]">
             {project.title}{" "}
           </p>
-          <div className="flex items-center">
-            <Link href={project.link} className="mx-1">
-              <ExternalLink className="w-4 h-4 text-[#9BA3AF]" />
-            </Link>
-            <Link href={project.githubRepo} className="mx-1">
-              <Code className="w-4 h-4 text-[#9BA3AF]" />
-            </Link>
-          </div>
+          {!soonCheck.includes("SOON") ? (
+            <div className="flex items-center">
+              <Link href={project.link} className="mx-1">
+                <ExternalLink className="w-4 h-4 text-[#9BA3AF]" />
+              </Link>
+              <Link href={project.githubRepo} className="mx-1">
+                <Code className="w-4 h-4 text-[#9BA3AF]" />
+              </Link>
+            </div>
+          ) : (
+            <div className="flex items-center">
+              <p className="text-[#9BA3AF] text-xs">SOON</p>
+            </div>
+          )}
         </div>
         <p className="text-[#424A54] text-xs antialiased leading-relaxed">
           {project.description}
